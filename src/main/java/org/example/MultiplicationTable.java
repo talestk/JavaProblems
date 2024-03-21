@@ -6,11 +6,11 @@ public class MultiplicationTable {
         int[][] result = new int[n][n];
 
         // loop to start each row
-        for (int i = 0; i < result.length; i++) {
+        for (int x = 0; x < result.length; x++) {
             // loop to set value on each row entry
-            for (int z = 0; z < result.length; z++) {
+            for (int y = 0; y < result.length; y++) {
                 // pos[x][y]
-                result[i][z] = (i + 1) * (z + 1);
+                result[x][y] = (x + 1) * (y + 1);
             }
         }
         return result;
