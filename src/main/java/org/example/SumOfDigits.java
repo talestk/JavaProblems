@@ -15,7 +15,9 @@ public class SumOfDigits {
                 root = 0;
             }
 
+            // remainder is what we are looking for
             root += n % 10;
+            // then we remove the last digit
             n /= 10;
         }
         return root;
