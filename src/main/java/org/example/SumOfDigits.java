@@ -27,4 +27,10 @@ public class SumOfDigits {
     public static int digital_root_best(int n) {
         return (n != 0 && n%9 == 0) ? 9 : n % 9;
     }
+    public static int digital_root_best2(int n) {
+        while(n > 9){
+            n = n/10 + n % 10;
+        }
+        return(n);
+    }
 }
