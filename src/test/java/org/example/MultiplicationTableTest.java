@@ -1,3 +1,5 @@
+package org.example;
+
 import org.example.MultiplicationTable;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;

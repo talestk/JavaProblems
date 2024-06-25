@@ -1,3 +1,5 @@
+package org.example;
+
 import org.example.CountingDuplicates;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
