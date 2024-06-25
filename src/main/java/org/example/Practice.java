@@ -3,6 +3,8 @@ package org.example;
 import java.util.Arrays;
 
 public class Practice {
+
+
     public static String reverseString(String str) {
         // simple and elegant solution
         StringBuilder sb = new StringBuilder(str);
@@ -24,5 +26,22 @@ public class Practice {
             }
         }
         return max;
+    }
+
+    public static boolean isPrimeNumber(int num) {
+
+        // check for 1 and negative numbers
+        if (num <= 1) {
+            return false;
+        }
+
+        // this is not the fastest but the simplest
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
