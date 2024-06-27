@@ -44,4 +44,37 @@ public class Practice {
 
         return true;
     }
+
+    public static int binarySearch(int[] arr, int beginning, int end, int key) {
+        /*
+            Ideally we would use either Arrays.binarySearch(arr, key) (needs sorting first Arrays.sort(arr))
+            or Collections.binarySearch(arr, key), both are O(log n) time complexity and O(1) for space complexity.
+
+            If not allowed then we can use the recursive solution below
+            call example:
+                binarySearch(arr, 0, arr.length -1, 7)
+         */
+
+        if (end >= beginning) {
+            int mid = beginning + (end - beginning) / 2;
+
+            // If the element is present at the
+            // middle itself
+            if (arr[mid] == key)
+                return mid;
+
+            // If element is smaller than mid, then
+            // it can only be present in left subarray
+            if (arr[mid] > key)
+                return binarySearch(arr, beginning, mid - 1, key);
+
+            // Else the element can only be present
+            // in right subarray
+            return binarySearch(arr, mid + 1, end, key);
+        }
+
+        // We reach here when element is not present
+        // in array
+        return -1;
+    }
 }
