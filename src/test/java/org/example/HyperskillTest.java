@@ -1,6 +1,9 @@
 package org.example;
 
 import org.junit.Test;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class HyperskillTest {
      @Test
@@ -45,6 +48,33 @@ public class HyperskillTest {
         } else {
             System.out.print("NO");
         }
+    }
+
+    @Test
+    public void someChecks() {
+         boolean b1 = true;
+         boolean b2 = false;
+         boolean b3 = false;
+
+         int result = (b1 && b2) ? 10 : (b2 || b3) ? 20 : 30;
+         System.out.println(result);
+    }
+
+    @Test
+    public void multiConstrHSTest() throws FileNotFoundException {
+
+       File file = new File("C:\\Users\\tales\\IdeaProjects\\CodeWars\\src\\test\\java\\org\\example\\dataset_91033.txt");
+        Scanner scanner = new Scanner(file);
+       int total = 0;
+       while (scanner.hasNext()) {
+           int nextInt = scanner.nextInt();
+           if (nextInt == 0) break;
+
+           if (nextInt % 2 == 0) {
+               total++;
+           }
+       }
+        System.out.println(total);
     }
 
 }
