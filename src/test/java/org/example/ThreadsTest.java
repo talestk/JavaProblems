@@ -12,6 +12,24 @@ public class ThreadsTest {
         System.out.println("Start stalled thread");
         Thread.sleep(3000);
         System.out.println("Finished stalled thread");
+
+        // now we wait for it to finish for 3 seconds
+        runAnyways = new TestThread();
+        runAnyways.start();
+        runAnyways.join(3000);
+        System.out.println("Start stalled thread");
+        Thread.sleep(3000);
+        System.out.println("Finished stalled thread");
+
+        /*
+        this should print something like
+        Start stalled thread
+        Running now!
+        Finished stalled thread
+        Running now!
+        Start stalled thread
+        Finished stalled thread
+         */
     }
 }
 
